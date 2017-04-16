@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register src="UserControl/UC_Header.ascx" tagname="UC_Header" tagprefix="uc1" %>
+<%@ Register src="UserControl/UC_Footer.ascx" tagname="UC_Footer" tagprefix="uc2" %>
+<%@ Register src="UserControl/UC_TopMenu.ascx" tagname="UC_TopMenu" tagprefix="uc3" %>
+
+<%@ Register src="UserControl/UC_CD_SACH.ascx" tagname="UC_CD_SACH" tagprefix="uc4" %>
+
+<%@ Register src="UserControl/UC_NXB.ascx" tagname="UC_NXB" tagprefix="uc5" %>
+<%@ Register src="UserControl/UC_QC.ascx" tagname="UC_QC" tagprefix="uc6" %>
+
+<%@ Register src="UserControl/UC_Phan_Quyen.ascx" tagname="UC_Phan_Quyen" tagprefix="uc7" %>
+
+<%@ Register src="UserControl/UC_SoLuotTruyCap_SoNguoiOnline.ascx" tagname="UC_SoLuotTruyCap_SoNguoiOnline" tagprefix="uc8" %>
+
+<%@ Register src="UserControl/Tim_Kiem.ascx" tagname="Tim_Kiem" tagprefix="uc9" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="Stylesheet" type="text/css" href="App_Theme/MyTheme.css" />
+    <script language="javascript" type="text/javascript" src="JavaScript/My_StatusBar.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+                                        
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table cellpadding="0" cellspacing="0" class="style1" 
+            style="width: 960px; padding: 0px; margin: 0px auto 0px auto">
+            <tr>
+                <td colspan="3">
+                    <uc1:UC_Header ID="UC_Header1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-color: #00CC00; height: 40px;">
+                    <uc3:UC_TopMenu ID="UC_TopMenu1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px; vertical-align: top;">
+                    <table cellpadding="0" cellspacing="0" class="style1">
+                        <tr>
+                            <td style="height: 30px; text-align: center; background-color: #800000; color: #FFFFFF; font-weight: bold;">
+                                CHỦ ĐỀ SÁCH</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <uc4:UC_CD_SACH ID="UC_CD_SACH1" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 30px; background-color: #800000; color: #FFFFFF; font-weight: bold; text-align: center;">
+                                NHÀ XUẤT BẢN</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <uc5:UC_NXB ID="UC_NXB1" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center">
+                                <uc8:UC_SoLuotTruyCap_SoNguoiOnline ID="UC_SoLuotTruyCap_SoNguoiOnline1" 
+                                    runat="server" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width: 560px; vertical-align: top; padding-left: 10px; padding-right: 10px;">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                    </asp:ContentPlaceHolder>    
+                </td>
+                <td style="width: 200px; vertical-align: top;">
+                    <table cellpadding="0" cellspacing="0" class="style2" 
+                        style="text-align: center" width="100%">
+                        <tr>
+                            <td style="font-weight: bold; width: 100%; background-color: #800000; padding-top: 4px; padding-bottom: 4px;">
+                                <asp:Label ID="Label1" runat="server" ForeColor="White" Text="TÌM KIẾM SÁCH"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold; width: 100%; padding-top: 4px; padding-bottom: 4px; background-color: #FFFFCC;">
+                                
+                                <uc9:Tim_Kiem ID="Tim_Kiem1" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold; width: 100%;">
+                                <uc7:UC_Phan_Quyen ID="UC_Phan_Quyen1" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 30px; font-weight: bold; background-color: #800000; color: #FFFFFF;">
+                                QUẢNG CÁO</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <uc6:UC_QC ID="UC_QC1" runat="server" />
+                            </td>
+                        </tr>
+                        </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="padding-top: 8px">
+                    <uc2:UC_Footer ID="UC_Footer1" runat="server" />
+                </td>
+            </tr>
+        </table>
+        
+        
+    </div>
+    </form>
+</body>
+</html>
